@@ -1,0 +1,38 @@
+plugins {
+	id 'org.springframework.boot' version '2.7.2'
+	id 'io.spring.dependency-management' version '1.0.12.RELEASE'
+	id 'java'
+}
+
+group = 'net.guides.todo'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '18'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa:2.7.0'
+	implementation 'org.springframework.boot:spring-boot-starter-security:2.7.0'
+	implementation 'org.springframework.boot:spring-boot-starter-web:2.7.0'
+    implementation 'org.springframework.boot:spring-boot-starter-validation:2.7.0'
+	implementation 'org.apache.tomcat.embed:tomcat-embed-jasper:9.0.64'
+	implementation 'javax.servlet:javax.servlet-api:4.0.1'
+	implementation 'javax.servlet.jsp.jstl:javax.servlet.jsp.jstl-api:1.2.2'
+	implementation 'org.apache.taglibs:taglibs-standard-impl:1.2.5';
+	developmentOnly 'org.springframework.boot:spring-boot-devtools:2.7.0'
+	runtimeOnly 'mysql:mysql-connector-java:8.0.29'
+	implementation 'org.webjars.npm:jquery:2.2.4'
+	implementation 'org.webjars.npm:bootstrap-datepicker:1.9.0'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test:2.7.0'
+	testImplementation 'org.springframework.security:spring-security-test:5.7.1'
+}
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
+
+bootJar {
+	archiveFileName="todoapp.jar"
+}
